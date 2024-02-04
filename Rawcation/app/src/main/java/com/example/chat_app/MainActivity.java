@@ -9,6 +9,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
+import com.example.chat_app.Adapters.PagerAdapter;
 
 import com.example.chat_app.Adapters.FragmentAdapter;
 import com.example.chat_app.databinding.ActivityMainBinding;
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
    ActivityMainBinding binding;
    FirebaseAuth mAuth;
+   private ViewPager viewPager;
+   private TabLayout tabLayout;
 
     // Define constants for the menu items
     private static final int SETTINGS_MENU_ITEM = R.id.settings;
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.viewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager()));
         binding.tabLayout.setupWithViewPager(binding.viewPager);
+
     }
 
     @Override
